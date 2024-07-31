@@ -1,6 +1,6 @@
-package com.example.server.repositories;
+package com.example.server.domain.repositories;
 
-import com.example.server.model.UserModel;
+import com.example.server.domain.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

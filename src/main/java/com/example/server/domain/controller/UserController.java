@@ -1,8 +1,8 @@
-package com.example.server.controller;
+package com.example.server.domain.controller;
 
-import com.example.server.dto.UserDto;
-import com.example.server.repositories.UserRepository;
-import com.example.server.services.UserService;
+import com.example.server.domain.services.UserService;
+import com.example.server.domain.dto.UserDto;
+import com.example.server.domain.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

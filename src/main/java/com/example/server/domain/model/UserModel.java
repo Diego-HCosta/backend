@@ -1,4 +1,4 @@
-package com.example.server.model;
+package com.example.server.domain.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

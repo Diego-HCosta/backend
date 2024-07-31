@@ -1,8 +1,8 @@
-package com.example.server.services;
+package com.example.server.domain.services;
 
-import com.example.server.dto.UserDto;
-import com.example.server.model.UserModel;
-import com.example.server.repositories.UserRepository;
+import com.example.server.domain.dto.UserDto;
+import com.example.server.domain.model.UserModel;
+import com.example.server.domain.repositories.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
