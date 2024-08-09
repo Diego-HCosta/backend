@@ -15,6 +15,7 @@ public class UserController {
 
     @GetMapping("/")
     public String add() {
+
         return "All its working";
     }
     @GetMapping("/add/{name}/{password}")
