@@ -21,6 +21,7 @@ public class UserController {
     @GetMapping("/add/{name}/{password}")
     public String add(@PathVariable String name, @PathVariable String password) {
         UserService service = new UserService(userRepository);
+        System.out.println("entrou service");
         service.save(new UserDto(name, password));
         return "working";
     }

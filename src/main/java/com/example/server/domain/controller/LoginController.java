@@ -19,18 +19,17 @@ public class LoginController {
     private UserRepository userRepository;
     @PostMapping("/login")
     public String login(@RequestBody LoginDto loginDto) throws AuthenticationException {
-        Boolean authenticated = false;
+        boolean authenticated = false;
         UserService userService = new UserService(this.userRepository);
         if(userService.findByLogin(loginDto).isPresent()){
             authenticated = true;
         };
         if(authenticated){
             try {
-                Algorithm algorithm = Algorithm.HMAC256(loginDto.getPassword());
-                String token = JWT.create()
+                Algorithm algorithm = Algorithm.HMAC256("./w3r");
+                return JWT.create()
                         .withIssuer("test-key-secret")
                         .sign(algorithm);
-                return token;
             }catch (JWTCreationException jwtCreationException){
                 throw new AuthenticationException(jwtCreationException.getMessage());
             }

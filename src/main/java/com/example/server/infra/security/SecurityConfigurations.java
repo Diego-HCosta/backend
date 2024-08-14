@@ -22,7 +22,9 @@ public class SecurityConfigurations {
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                ).addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
+                )
+
+                .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 }
