@@ -35,7 +35,6 @@ public class LoginController {
                 InfoLoginDto infoLoginDto = new InfoLoginDto(loginDto.getUsername());
                 ObjectMapper objectMapper = new ObjectMapper();
                 String json = objectMapper.writeValueAsString(infoLoginDto);
-                System.out.println(json);
                 return JWT.create()
                         .withIssuer("test-key-secret")
                         .withSubject(json)
