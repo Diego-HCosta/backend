@@ -16,7 +16,7 @@ Este projeto é uma API RESTful para gerenciar usuários e autenticação, desen
 Antes de começar, você precisa ter os seguintes softwares instalados:
 
 - [Java 22](https://www.oracle.com/java/technologies/downloads/)
-- [Maven 3.8+](https://maven.apache.org/install.html) ( caso tenha IntelliJ instalado basta cliclar no arquivo POM.xml ir em maven e depois por último em reload project eliminando necessidade de installar o maven.)
+- [Maven 3.8+](https://maven.apache.org/install.html) ( caso tenha IntelliJ instalado basta cliclar no arquivo POM.xml ir em maven e depois por último em reload project eliminando necessidade de installar o maven em ambiente de desenvolvimento.)
 - Um IDE como [IntelliJ IDEA](https://www.jetbrains.com/idea/) ou [Eclipse](https://www.eclipse.org/downloads/)
 
 ## Instalação e Execução
