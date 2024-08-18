@@ -40,10 +40,10 @@ public class SecurityFilter extends OncePerRequestFilter {
                         .withIssuer("test-key-secret")
                         // reusable verifier instance
                         .build();
-
                 decodedJWT = verifier.verify(token);
                 String username = decodedJWT.getSubject();
                 System.out.println(username);
+                System.out.println("Subject ");
                 List<String> roles = decodedJWT.getClaim("roles").asList(String.class);
                 if (roles == null) {
                     roles = Collections.emptyList();
@@ -55,9 +55,12 @@ public class SecurityFilter extends OncePerRequestFilter {
                 UsernamePasswordAuthenticationToken authentication =
                         new UsernamePasswordAuthenticationToken(username, null,authorities);
 
-                SecurityContextHolder.getContext().setAuthentication(authentication);
+                //SecurityContextHolder.getContext().setAuthentication(authentication);
+                //Debug
+                response.sendError(404);
                 filterChain.doFilter(request, response);
             } catch (JWTVerificationException exception){
+                System.out.println("Teste");
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             }
         }
