@@ -8,6 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Entity
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name  = "user")

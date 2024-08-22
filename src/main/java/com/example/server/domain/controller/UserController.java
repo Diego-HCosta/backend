@@ -1,12 +1,12 @@
 package com.example.server.domain.controller;
 
+import com.example.server.domain.dto.ChangePassDto;
+import com.example.server.domain.model.UserModel;
 import com.example.server.domain.services.UserService;
 import com.example.server.domain.dto.UserDto;
 import com.example.server.domain.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -26,8 +26,20 @@ public class UserController {
         return "working";
     }
     @GetMapping("/remove/{id}")
-    public String remove(@PathVariable int id) {
+    public String remove(@PathVariable long id) {
         UserService service = new UserService(userRepository);
+        UserModel userModel = userRepository.findById(id).orElseThrow(()-> new RuntimeException("User not found"));
+        service.delete(userModel.getId());
         return "removed";
+    }
+
+    @PostMapping("/changePass")
+    public String changePass(@RequestBody ChangePassDto changePassDto) {
+        UserService service = new UserService(userRepository);
+        UserModel user = userRepository.findById(changePassDto.getId())
+                .orElseThrow(()-> new RuntimeException("User dont found"));
+        user.setPassword(changePassDto.getNewPass());
+        userRepository.save(user);
+        return "changed pass";
     }
 }
