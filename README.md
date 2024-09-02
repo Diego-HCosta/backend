@@ -57,3 +57,25 @@ Use este token no cabeçalho Authorization das demais requisições:
 ```makefile
    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
+## Endpoints
+### Autenticação
+- Post: **'/login'**
+```json
+  {
+   "email": "usuario@example.com",
+   "senha": "senha123"
+  }
+```
+
+### Usuários
+-  POST:  **'/changePass'**
+```
+{
+	"id": 1,
+	"newPass": "Teste213"
+}
+```
+- GET: **'/remove/{id}'**
+
+
+- GET : **'/add/{user}/{pass}'**
